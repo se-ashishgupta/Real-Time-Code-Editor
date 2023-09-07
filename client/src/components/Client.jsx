@@ -1,10 +1,10 @@
 import React from "react";
-// import Avatar from "react-avatar";
+import Avatar from "react-avatar";
 
 const Client = ({ userName }) => {
   return (
     <div className=" flex items-center gap-2 ">
-      {/* <Avatar name={userName} size={50} round={50} /> */}
+      <Avatar name={userName} size={50} round="50px" />
       <span className=" text-sm text-white ">{userName}</span>
     </div>
   );
