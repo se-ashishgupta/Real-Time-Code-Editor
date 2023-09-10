@@ -6,7 +6,14 @@
 }
 
 .CodeMirror {
-  min-height: calc(100vh - 20px);
+  min-height: calc(100vh - 0px);
   line-height: 1.6;
   padding-top: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .CodeMirror {
+    line-height: 1.6;
+    padding-top: 80px;
+  }
 }

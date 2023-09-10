@@ -4,6 +4,9 @@ import Client from "../../components/Client";
 import Editor from "../../components/Editor";
 import { initSocket } from "../../socket";
 import { ACTIONS } from "../../Actions";
+import { FaBars } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
+
 import {
   Navigate,
   useLocation,
@@ -11,9 +14,11 @@ import {
   useParams,
 } from "react-router-dom";
 import { toast } from "react-hot-toast";
+import Sidebar from "../../components/Sidebar";
 
 const EditorPage = () => {
   const [userList, setUserList] = useState([]);
+  // const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const codeRef = useRef(null);
 
@@ -102,38 +107,13 @@ const EditorPage = () => {
   }
 
   return (
-    <div className=" flex">
+    <div className=" lg:flex relative h-full w-full  ">
       {/* Left Side  */}
-      <div className=" bg-primary_color py-4 px-3 w-[15vmax] flex flex-col">
-        <div className=" flex flex-col flex-1">
-          <div className=" border-b-[1px] border-slate-700">
-            <img className="h-[65px] pb-2" src={logo} alt="logo" />
-          </div>
-
-          <h1 className=" text-lg text-white font-bold py-2">Connected</h1>
-
-          {/* User List  */}
-          <div className=" flex flex-col gap-2">
-            {userList.map((client) => (
-              <Client key={client.socketId} userName={client.userName} />
-            ))}
-          </div>
-        </div>
-
-        {/* Buttons  */}
-        <button
-          onClick={copyRoomIdHandler}
-          className="text-sm font-bold  bg-white border-2 border-white rounded-md px-3 py-2 transition-all duration-300 hover:bg-transparent hover:text-white "
-        >
-          Copy ROOM ID
-        </button>
-        <button
-          onClick={leaveRoomHandler}
-          className="text-sm font-bold  bg-secondary_color border-2 border-secondary_color rounded-md px-3 py-2 transition-all duration-300 hover:bg-transparent hover:text-white mt-3"
-        >
-          Leave
-        </button>
-      </div>
+      <Sidebar
+        userList={userList}
+        copyRoomIdHandler={copyRoomIdHandler}
+        leaveRoomHandler={leaveRoomHandler}
+      />
 
       {/* Right Side */}
       <div className=" flex-1 ">
