@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../assets/code-sync.png";
+import logo from "../../assets/Logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { v4 as uuidV4 } from "uuid";
 import toast from "react-hot-toast";
@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <div className="h-[100vh] flex items-center justify-center bg-primary_color">
       <div className=" bg-primary_color_1 rounded-lg p-5 w-[25rem] max-w-[90%]">
-        <img src={logo} alt="logo" className="h-[80px] py-2" />
+        <img src={logo} alt="logo" className="h-[65px] w-[60%] py-2" />
 
         <h1 className=" text-white font-semibold mt-5 text-sm">
           Paste Invitation ROOM ID
@@ -43,7 +43,7 @@ const Home = () => {
         <form className=" flex flex-col gap-4 py-2 " onSubmit={joinRoomHandler}>
           <input
             type="text"
-            class="px-3 py-2 font-semibold bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-secondary_color focus:secondary_color rounded-md sm:text-sm focus:ring-1"
+            className="px-3 py-2 font-semibold bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-secondary_color focus:secondary_color rounded-md sm:text-sm focus:ring-1"
             placeholder="ROOM ID"
             value={roomId}
             onChange={(e) => setRoomId(e.target.value)}

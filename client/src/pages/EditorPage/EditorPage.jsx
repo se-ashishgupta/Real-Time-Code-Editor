@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import logo from "../../assets/code-sync.png";
-import Client from "../../components/Client";
 import Editor from "../../components/Editor";
 import { initSocket } from "../../socket";
 import { ACTIONS } from "../../Actions";
-import { FaBars } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
 
 import {
   Navigate,
@@ -89,10 +85,11 @@ const EditorPage = () => {
     };
   }, []);
 
-  const copyRoomIdHandler = async () => {
+  const copyRoomIdHandler = async (setSidebarOpen) => {
     try {
       await navigator.clipboard.writeText(roomId);
       toast.success("Room Id has been copied to your Clipboard");
+      setSidebarOpen(false);
     } catch (error) {
       toast.error("Could not copy the Room Id");
       console.log(error);
