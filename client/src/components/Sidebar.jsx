@@ -64,7 +64,7 @@ const Sidebar = ({ userList, copyRoomIdHandler, leaveRoomHandler }) => {
 
       {/* Phone View Sidebar  */}
       <div
-        className={` bg-primary_color py-4 px-3 w-[13rem] lg:hidden flex flex-col h-[100vh] absolute z-10  transition-all duration-500  ${
+        className={` bg-primary_color py-4 px-3 w-[13rem] lg:hidden flex flex-col h-full absolute z-10  transition-all duration-500  ${
           sidebarOpen ? "" : "translate-x-[-100%]"
         }`}
       >
