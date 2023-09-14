@@ -2,5 +2,5 @@
   "version": 2,
   "name": "coding_courses",
   "builds": [{ "src": "server.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "use": "/server.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/server.js" }]
 }
